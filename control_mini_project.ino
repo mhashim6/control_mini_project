@@ -20,7 +20,7 @@ float  average = 0;                // the average
 
 void setup() {
   Serial.begin(1200);
-  pinMode(6, c_out);
+  pinMode(6, OUTPUT);
   for (int thisReading = 0; thisReading < READINGS; thisReading++) {
     readings[thisReading] = 0;
   }
@@ -47,12 +47,12 @@ void pid()
 
   /*pid all the working error variables*/
   double error = SET_POINT - feedback;
-  
+
   /*if (errorCounter > 500.0) {
     errSum = 0;
     errorCounter = 0;
-  } else errorCounter++;
-*/
+    } else errorCounter++;
+  */
   errSum += (error * timeChange);
   double dErr = (error - lastErr) / timeChange;
   /*pid PID c_out*/
