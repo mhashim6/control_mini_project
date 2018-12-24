@@ -19,6 +19,7 @@ void loop() {
   Serial.println(error);
   Serial.print("angle: ");
   Serial.println(angle);
+  Serial.println("-----------");
   if (angle > 180)
     servo.write(180);
   else

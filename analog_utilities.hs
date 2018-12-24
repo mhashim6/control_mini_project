@@ -18,6 +18,7 @@ agtc ag = ag * 0.09765625
 -- does the opposite of agtc.
 ctag  :: Float -> Float
 ctag c = c / 0.09765625
+
 -- does the opposite of atc.
 cta ::  Float -> Float
 cta c = c / 0.48828125
