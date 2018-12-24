@@ -17,11 +17,11 @@ cta c = c / 0.48828125
 
 -- converts an (LM35) voltage signal to Celsius (assuming 5v VCC).
 vtc ::  Float -> Float
-vtc v = atc.vta v $5.0
+vtc v = atc.vta 5.0 $v
 
 -- does the opposite of vtc.
 ctv ::  Float -> Float
-ctv c = atv (cta c) 5.0
+ctv c = atv 5.0 (cta c)
 
 -- converts a fan rpm reading to voltage. assuming 3200 to be max rpm.
 rtv ::  Float -> Float -> Float

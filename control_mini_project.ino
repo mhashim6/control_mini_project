@@ -3,9 +3,10 @@ float analogSignal;
 
 #define SET_POINT 65
 
-#define kp 30.0
-#define ki 0.0001
-#define kd 0.0
+#define kp 40.0
+#define ki 0.0
+
+#define kd 1.0
 
 unsigned long lastTime;
 double feedback, c_out;
@@ -23,6 +24,7 @@ void setup() {
   pinMode(6, OUTPUT);
   for (int thisReading = 0; thisReading < READINGS; thisReading++) {
     readings[thisReading] = 0;
+
   }
   consumeNoise();
 }
@@ -31,7 +33,7 @@ void loop() {
   fan();
   pid();
   //  delay(1000);
-  //  oscilliscope();
+  oscilliscope();
   //  analogWrite(A0, 0);
   //  analogSignal = (analogRead(A5)/1024.0f) * 12.0f ;
 }
@@ -39,7 +41,7 @@ void loop() {
 void pid()
 {
   feedback = filter(analogRead(A5));
-  //  Serial.println(feedback * 0.48828125);
+  Serial.println(feedback * 0.48828125);
   //  Serial.print(" ");
   /*How long since we last calculated*/
   unsigned long now = millis();
