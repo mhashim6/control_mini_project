@@ -26,12 +26,12 @@ void setup() {
     readings[thisReading] = 0;
 
   }
-  consumeNoise();
+  //  consumeNoise();
 }
 
 void loop() {
-  fan();
-  pid();
+  //  fan();
+  //  pid();
   //  delay(1000);
   oscilliscope();
   //  analogWrite(A0, 0);
@@ -81,7 +81,8 @@ void fan() {
 }
 
 void oscilliscope() {
-  analogSignal = filter((analogRead(A5) * 0.48828125)) ; //* 0.48828125;
+  //  analogSignal = filter((analogRead(A5) * 0.48828125)) ;
+  analogSignal = analogRead(A5) * 0.48828125;
   Serial.println(analogSignal);
   Serial.print(" ");
 }
